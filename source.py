@@ -1,11 +1,11 @@
 import mysql.connector as mc
-from tkinter import *
+import customtkinter as ctk
 from tkinter import messagebox
 from tabulate import tabulate
 
 # Database connection function
 def connect_db():
-    return mc.connect(host='localhost', user='root', password='', database='library')
+    return mc.connect(host='localhost', user='root', password='', database='lms')
 
 # Function for Login Validation
 def login():
@@ -77,45 +77,49 @@ def delete_book():
 # GUI Windows
 def open_main_window():
     global bookid_entry, bookname_entry, author_entry, category_entry
-    main_window = Tk()
+    
+    main_window = ctk.CTk()
     main_window.title("Library Management System")
+    main_window.geometry("400x400")
 
     # Book Details
-    Label(main_window, text="Book ID").grid(row=0, column=0)
-    bookid_entry = Entry(main_window)
-    bookid_entry.grid(row=0, column=1)
+    ctk.CTkLabel(main_window, text="Book ID").grid(row=0, column=0, padx=10, pady=10)
+    bookid_entry = ctk.CTkEntry(main_window)
+    bookid_entry.grid(row=0, column=1, padx=10, pady=10)
 
-    Label(main_window, text="Book Name").grid(row=1, column=0)
-    bookname_entry = Entry(main_window)
-    bookname_entry.grid(row=1, column=1)
+    ctk.CTkLabel(main_window, text="Book Name").grid(row=1, column=0, padx=10, pady=10)
+    bookname_entry = ctk.CTkEntry(main_window)
+    bookname_entry.grid(row=1, column=1, padx=10, pady=10)
 
-    Label(main_window, text="Author").grid(row=2, column=0)
-    author_entry = Entry(main_window)
-    author_entry.grid(row=2, column=1)
+    ctk.CTkLabel(main_window, text="Author").grid(row=2, column=0, padx=10, pady=10)
+    author_entry = ctk.CTkEntry(main_window)
+    author_entry.grid(row=2, column=1, padx=10, pady=10)
 
-    Label(main_window, text="Category").grid(row=3, column=0)
-    category_entry = Entry(main_window)
-    category_entry.grid(row=3, column=1)
+    ctk.CTkLabel(main_window, text="Category").grid(row=3, column=0, padx=10, pady=10)
+    category_entry = ctk.CTkEntry(main_window)
+    category_entry.grid(row=3, column=1, padx=10, pady=10)
 
     # CRUD Buttons
-    Button(main_window, text="Display Books", command=display_books).grid(row=4, column=0)
-    Button(main_window, text="Insert Book", command=insert_book).grid(row=4, column=1)
-    Button(main_window, text="Update Book", command=update_book).grid(row=5, column=0)
-    Button(main_window, text="Delete Book", command=delete_book).grid(row=5, column=1)
+    ctk.CTkButton(main_window, text="Display Books", command=display_books).grid(row=4, column=0, padx=10, pady=10)
+    ctk.CTkButton(main_window, text="Insert Book", command=insert_book).grid(row=4, column=1, padx=10, pady=10)
+    ctk.CTkButton(main_window, text="Update Book", command=update_book).grid(row=5, column=0, padx=10, pady=10)
+    ctk.CTkButton(main_window, text="Delete Book", command=delete_book).grid(row=5, column=1, padx=10, pady=10)
 
     main_window.mainloop()
 
 # Login Window
-login_window = Tk()
+login_window = ctk.CTk()
 login_window.title("Login")
-Label(login_window, text="Username").grid(row=0, column=0)
-username_entry = Entry(login_window)
-username_entry.grid(row=0, column=1)
+login_window.geometry("300x200")
 
-Label(login_window, text="Password").grid(row=1, column=0)
-password_entry = Entry(login_window, show="*")
-password_entry.grid(row=1, column=1)
+ctk.CTkLabel(login_window, text="Username").grid(row=0, column=0, padx=10, pady=10)
+username_entry = ctk.CTkEntry(login_window)
+username_entry.grid(row=0, column=1, padx=10, pady=10)
 
-Button(login_window, text="Login", command=login).grid(row=2, column=1)
+ctk.CTkLabel(login_window, text="Password").grid(row=1, column=0, padx=10, pady=10)
+password_entry = ctk.CTkEntry(login_window, show="*")
+password_entry.grid(row=1, column=1, padx=10, pady=10)
+
+ctk.CTkButton(login_window, text="Login", command=login).grid(row=2, column=1, padx=10, pady=10)
 
 login_window.mainloop()
