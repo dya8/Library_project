@@ -711,7 +711,7 @@ def open_main_menu():
     main_menu.geometry("1000x600")
     main_menu.configure(bg="#222831")
     #check me
-    bg_image = PhotoImage(file=r"C:\Users\diyad\OneDrive\Desktop - Copy\lib\starting.png")  # Replace 'background.png' with your image file
+    bg_image = PhotoImage(file=r"C:\Users\diyad\PLibrary\starting.png")  # Replace 'background.png' with your image file
 
     # Create a Canvas to hold the background image
     canvas = Canvas(main_menu, width=700, height=300)
@@ -825,7 +825,7 @@ def open_started():
     get_started_window.configure(bg="#222831")
 
     # Load the background image (check me)
-    bg_image = PhotoImage(file=r"C:\Users\diyad\OneDrive\Desktop - Copy\lib\landing.png")  # Update the path to your image file
+    bg_image = PhotoImage(file=r"C:\Users\diyad\PLibrary\landing.png")  # Update the path to your image file
 
     # Create a Canvas to hold the background image
     canvas = Canvas(get_started_window, width=1000, height=600)
@@ -866,11 +866,11 @@ login_window.configure(fg_color="#061132")
 
 
 # Left and Right Images (check me)
-left_image = Image.open(r"C:\Users\diyad\OneDrive\Desktop - Copy\lib\01.png")
+left_image = Image.open(r"C:\Users\diyad\PLibrary\01.png")
 left_image = left_image.resize((400, 400), Image.LANCZOS)
 left_img = ImageTk.PhotoImage(left_image)
 
-right_image = Image.open(r"C:\Users\diyad\OneDrive\Desktop - Copy\lib\02.png")
+right_image = Image.open(r"C:\Users\diyad\PLibrary\02.png")
 right_image = right_image.resize((400, 400), Image.LANCZOS)
 right_img = ImageTk.PhotoImage(right_image)
 
